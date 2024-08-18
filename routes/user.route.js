@@ -14,7 +14,7 @@ import upload from "../middlewares/multer.js";
 
 const router = express.Router();
 
-router.post("/test").post(test);
+router.post("/test", test);
 router.route("/register").post(register);
 router.route("/login").post(login);
 router.route("/logout").get(logout);
