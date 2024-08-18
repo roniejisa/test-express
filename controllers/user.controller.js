@@ -8,7 +8,7 @@ import clientPromise from "../utils/db.js";
 export const test = async (req, res) => {
     const client = await clientPromise;
     const collection = await client.db("myFirstDatabase").collection("users");
-    const users = await collection.countDocuments();
+    const users = await collection.find().toArray();
     return res.json({
         total: users,
     });
