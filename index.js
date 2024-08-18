@@ -16,10 +16,10 @@ const PORT = process.env.PORT || 3000;
 // const __dirname = path.resolve();
 
 app.get("/", (req, res) => {
-  return res.status(200).json({
-    message: "Im coming form backend",
-    success: true,
-  });
+    return res.status(200).json({
+        message: "Im coming form backend",
+        success: true,
+    });
 });
 //middleware
 app.use(express.json());
@@ -27,8 +27,9 @@ app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
 
 const corsOptions = {
-  origin: true, // Mở cho tất cả các domain
-  credentials: true,
+    origin: "*", // Mở cho tất cả các domain
+    methods: ["GET", "POST", "PUT", "PATCH", "OPTIONS", "DELETE"],
+    credentials: true,
 };
 
 app.use(cors(corsOptions));
@@ -43,6 +44,6 @@ app.use("/api/v1/message", messageRoute);
 // });
 
 server.listen(PORT, () => {
-  connectDB();
-  console.log(`Server is running on port ${PORT}`);
+    connectDB();
+    console.log(`Server is running on port ${PORT}`);
 });
