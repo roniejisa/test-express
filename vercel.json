@@ -8,13 +8,13 @@
         "controllers/*.js": {
           "maxDuration": 60
         },
-        "middlewares/**/*.js": {
+        "middlewares/*.js": {
           "maxDuration": 60
         },
-        "routes/**/*.js": {
+        "routes/*.js": {
           "maxDuration": 60
         },
-        "models/**/*.js": {
+        "models/*.js": {
           "maxDuration": 60
         }
       }
