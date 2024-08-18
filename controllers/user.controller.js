@@ -5,7 +5,8 @@ import getDataUri from "../utils/datauri.js";
 import cloudinary from "../utils/cloudinary.js";
 import { Post } from "../models/post.model.js";
 export const test = async (req, res) => {
-    return res.json(req.body);
+    const users = await User.find({});
+    return res.json(users);
 };
 export const register = async (req, res) => {
     try {
