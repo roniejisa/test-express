@@ -38,6 +38,5 @@ app.use("/api/v1/message", messageRoute);
 // });
 
 server.listen(PORT, () => {
-    connectDB();
     console.log(`Server is running on port ${PORT}`);
 });

@@ -4,8 +4,11 @@ import jwt from "jsonwebtoken";
 import getDataUri from "../utils/datauri.js";
 import cloudinary from "../utils/cloudinary.js";
 import { Post } from "../models/post.model.js";
+import clientPromise from "../utils/db.js";
 export const test = async (req, res) => {
-    const users = await User.find({});
+    const client = await clientPromise;
+    const collection = await client.db("myFirstDatabase").collection("users");
+    const users = await collection.countDocuments();
     return res.json(users);
 };
 export const register = async (req, res) => {
