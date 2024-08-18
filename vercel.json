@@ -4,22 +4,22 @@
     {
       "src": "index.js",
       "use": "@vercel/node",
-      "functions": {
-        "controllers/*.js": {
-          "maxDuration": 60
-        },
-        "middlewares/*.js": {
-          "maxDuration": 60
-        },
-        "routes/*.js": {
-          "maxDuration": 60
-        },
-        "models/*.js": {
-          "maxDuration": 60
-        }
-      }
     }
   ],
+  "functions": {
+    "controllers/*.js": {
+      "maxDuration": 60
+    },
+    "middlewares/*.js": {
+      "maxDuration": 60
+    },
+    "routes/*.js": {
+      "maxDuration": 60
+    },
+    "models/*.js": {
+      "maxDuration": 60
+    }
+  },
   "routes": [
     {
       "src": "/(.*)",
