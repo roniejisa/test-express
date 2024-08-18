@@ -26,13 +26,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
 
-const corsOptions = {
-    origin: "*", // Mở cho tất cả các domain
-    methods: ["GET", "POST", "PUT", "PATCH", "OPTIONS", "DELETE"],
-    credentials: true,
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/post", postRoute);
