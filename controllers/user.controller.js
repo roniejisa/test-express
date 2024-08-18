@@ -9,7 +9,9 @@ export const test = async (req, res) => {
     const client = await clientPromise;
     const collection = await client.db("myFirstDatabase").collection("users");
     const users = await collection.countDocuments();
-    return res.json(users);
+    return res.json({
+        total: users,
+    });
 };
 export const register = async (req, res) => {
     try {
